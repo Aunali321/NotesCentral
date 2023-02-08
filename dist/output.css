@@ -1076,6 +1076,15 @@ input:checked + .toggle-bg {
   z-index: 30;
 }
 
+.m-40 {
+  margin: 10rem;
+}
+
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1168,6 +1177,14 @@ input:checked + .toggle-bg {
   width: 50%;
 }
 
+.max-w-md {
+  max-width: 28rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1236,6 +1253,10 @@ input:checked + .toggle-bg {
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-start {
@@ -1480,6 +1501,10 @@ input:checked + .toggle-bg {
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .leading-9 {
