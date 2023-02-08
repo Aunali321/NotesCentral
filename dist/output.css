@@ -3277,7 +3277,27 @@ body {
 }
 
 @media (min-width: 768px) {
+  .md\:mt-40 {
+    margin-top: 10rem;
+  }
+
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-96 {
+    height: 24rem;
+  }
+
+  .md\:w-full {
+    width: 100%;
+  }
+
+  .md\:items-center {
+    align-items: center;
+  }
+
+  .md\:justify-center {
+    justify-content: center;
   }
 }
