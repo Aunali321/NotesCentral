@@ -200,7 +200,7 @@ include("php/fetch_practicals.php");
                         </div>
                         <div class="mb-3 text-sm text-blue-800 dark:text-blue-400">
                             <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
-                            <p>You are now user dashboard page.</p>
+                            <p>You are now in dashboard page.</p>
                         </div>
                         <a class="text-sm text-blue-800 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300" href="logout.php">Logout</a>
                     </div>
@@ -225,7 +225,7 @@ include("php/fetch_practicals.php");
                 process more
                 efficient and effective. Join the community and take your coding skills to the next level!</h6>
         </div>
-        <div class="justify-center h-96">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
             <!-- <img class="justify-center h-96 md:w-full md:items-center md:justify-center md:mt-40" src="../assets/code_review.svg" alt=""> -->
             <?php
             $result = display_grid();
