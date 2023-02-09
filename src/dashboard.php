@@ -1,6 +1,8 @@
 <?php
 //include auth_session.php file on all user panel pages
 include("php/auth_session.php");
+include("php/fetch_practicals.php");
+
 ?>
 
 <!doctype html>
@@ -46,10 +48,18 @@ include("php/auth_session.php");
                     </button>
                     <ul id="sem1-dropdown" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">C</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="1">
+                                <input type="hidden" name="subject" value="C">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">C</button></a>
+                            </form>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">DBMS</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="1">
+                                <input type="hidden" name="subject" value="DBMS">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">DBMS</button></a>
+                            </form>
                         </li>
                     </ul>
                     <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem2-dropdown" data-collapse-toggle="sem2-dropdown">
@@ -61,12 +71,18 @@ include("php/auth_session.php");
                     </button>
                     <ul id="sem2-dropdown" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Advanced
-                                C</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="2">
+                                <input type="hidden" name="subject" value="Advanced C">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Advanced C</button></a>
+                            </form>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">I
-                                & WD</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="2">
+                                <input type="hidden" name="subject" value="I & WD">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">I & WD</button></a>
+                            </form>
                         </li>
                     </ul>
                     <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem3-dropdown" data-collapse-toggle="sem3-dropdown">
@@ -78,10 +94,18 @@ include("php/auth_session.php");
                     </button>
                     <ul id="sem3-dropdown" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">ADBMS</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="3">
+                                <input type="hidden" name="subject" value="ADBMS">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">ADBMS</button></a>
+                            </form>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">DS</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="3">
+                                <input type="hidden" name="subject" value="DS">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">DS</button></a>
+                            </form>
                         </li>
                     </ul>
                     <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem4-dropdown" data-collapse-toggle="sem4-dropdown">
@@ -93,10 +117,18 @@ include("php/auth_session.php");
                     </button>
                     <ul id="sem4-dropdown" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">PHP</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="4">
+                                <input type="hidden" name="subject" value="PHP">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">PHP</button></a>
+                            </form>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">C++</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="4">
+                                <input type="hidden" name="subject" value="C++">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">C++</button></a>
+                            </form>
                         </li>
                     </ul>
                     <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem5-dropdown" data-collapse-toggle="sem5-dropdown">
@@ -108,10 +140,18 @@ include("php/auth_session.php");
                     </button>
                     <ul id="sem5-dropdown" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Java</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="5">
+                                <input type="hidden" name="subject" value="Java">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Java</button></a>
+                            </form>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">.NET</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="5">
+                                <input type="hidden" name="subject" value=".NET">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">.NET</button></a>
+                            </form>
                         </li>
                     </ul>
                     <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem6-dropdown" data-collapse-toggle="sem6-dropdown">
@@ -123,7 +163,11 @@ include("php/auth_session.php");
                     </button>
                     <ul id="sem6-dropdown" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Python</a>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="semester" value="6">
+                                <input type="hidden" name="subject" value="Python">
+                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Python</button></a>
+                            </form>
                         </li>
                     </ul>
                 </li>
@@ -182,7 +226,19 @@ include("php/auth_session.php");
                 efficient and effective. Join the community and take your coding skills to the next level!</h6>
         </div>
         <div class="justify-center h-96">
-            <img class="justify-center h-96 md:w-full md:items-center md:justify-center md:mt-40" src="../assets/code_review.svg" alt="">
+            <!-- <img class="justify-center h-96 md:w-full md:items-center md:justify-center md:mt-40" src="../assets/code_review.svg" alt=""> -->
+            <?php
+            $result = display_grid();
+            echo $result;
+
+            if (isset($_POST['semester']) && isset($_POST['subject'])) {
+                $semester = $_POST['semester'];
+                $subject = $_POST['subject'];
+                // $result = get_practicals($semester, $subject);
+                $result = display_practicals_by_sem($semester, $subject);
+                echo $result;
+            }
+            ?>
         </div>
     </div>
 
