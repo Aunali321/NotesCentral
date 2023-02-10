@@ -16,7 +16,7 @@ if (isset($_POST['username'])) {
         $_SESSION['username'] = $username;
         // Redirect to user dashboard page
         echo "<script>alert('Login Successful!')</script>";
-        header("Location: dashboard.php");
+        header("Location: dashboard");
     } else {
         echo '
             <div id="alert-2" class="mx-3 mt-6 flex p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
@@ -48,7 +48,7 @@ if (isset($_POST['username'])) {
 
 <body>
     <div class="navbar bg-[#050d22]">
-        <a class="btn btn-ghost normal-case text-2xl mx-auto" href="dashboard.php">NotesCentral</a>
+        <a class="btn btn-ghost normal-case text-2xl mx-auto" href="dashboard">NotesCentral</a>
     </div>
 
     <div class="flex items-center justify-center h-screen">
@@ -66,7 +66,7 @@ if (isset($_POST['username'])) {
 
                 <button value="Login" type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign in</button>
                 <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                    Don't have an account yet? <a href="registration.php" class="text-blue-700 hover:underline dark:text-blue-500">Sign up for a account</a>
+                    Don't have an account yet? <a href="register" class="text-blue-700 hover:underline dark:text-blue-500">Sign up for a account</a>
                 </div>
             </form>
         </div>

@@ -28,7 +28,7 @@ if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password'])) {
          <p class="mb-3 text-sm text-blue-800 dark:text-blue-400">
             You have successfully registered.
          </p>
-         <a class="text-sm text-blue-800 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300" href="login.php">Click here to login</a>
+         <a class="text-sm text-blue-800 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300" href="login">Click here to login</a>
       </div>
 
         ';
@@ -59,13 +59,13 @@ if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>register</title>
     <link rel="stylesheet" href="output.css">
 </head>
 
 <body>
     <div class="navbar bg-[#050d22]">
-        <a class="btn btn-ghost normal-case text-2xl mx-auto" href="dashboard.php">NotesCentral</a>
+        <a class="btn btn-ghost normal-case text-2xl mx-auto" href="dashboard">NotesCentral</a>
     </div>
 
     <div class="flex items-center justify-center h-screen">
@@ -87,7 +87,7 @@ if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password'])) {
 
                 <button value="Register" type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create account</button>
                 <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                    Already registered? <a href="login.php" class="text-blue-700 hover:underline dark:text-blue-500">Sign in to your account</a>
+                    Already registered? <a href="login" class="text-blue-700 hover:underline dark:text-blue-500">Sign in to your account</a>
                 </div>
             </form>
         </div>
