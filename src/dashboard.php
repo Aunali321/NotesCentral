@@ -1,5 +1,8 @@
 <?php
 //include auth_session.php file on all user panel pages
+
+use function PHPSTORM_META\map;
+
 include("php/auth_session.php");
 include("php/fetch_practicals.php");
 
@@ -29,11 +32,15 @@ include("php/fetch_practicals.php");
             <ul class="space-y-2">
                 <li>
                     <div class="inline">
+                        <form action="#" method="POST">
+                            <input type="hidden" name="semester" value="">
+                            <input type="hidden" name="subject" value="">
+                            <a href="" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <img class="h-7 w-7" src="https://img.icons8.com/sf-regular-filled/96/null/home-page.png" />
+                                <span class="ml-3">All Practicals</span>
+                            </a>
+                        </form>
 
-                        <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <img class="h-7 w-7" src="https://img.icons8.com/sf-regular-filled/96/null/home-page.png" />
-                            <span class="ml-3">Home</span>
-                        </a>
                     </div>
 
                 </li>
@@ -51,14 +58,14 @@ include("php/fetch_practicals.php");
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="1">
                                 <input type="hidden" name="subject" value="C">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">C</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">C</button></a>
                             </form>
                         </li>
                         <li>
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="1">
                                 <input type="hidden" name="subject" value="DBMS">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">DBMS</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">DBMS</button></a>
                             </form>
                         </li>
                     </ul>
@@ -74,14 +81,14 @@ include("php/fetch_practicals.php");
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="2">
                                 <input type="hidden" name="subject" value="Advanced C">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Advanced C</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Advanced C</button></a>
                             </form>
                         </li>
                         <li>
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="2">
                                 <input type="hidden" name="subject" value="I & WD">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">I & WD</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">I & WD</button></a>
                             </form>
                         </li>
                     </ul>
@@ -97,14 +104,14 @@ include("php/fetch_practicals.php");
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="3">
                                 <input type="hidden" name="subject" value="ADBMS">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">ADBMS</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">ADBMS</button></a>
                             </form>
                         </li>
                         <li>
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="3">
                                 <input type="hidden" name="subject" value="DS">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">DS</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">DS</button></a>
                             </form>
                         </li>
                     </ul>
@@ -120,14 +127,14 @@ include("php/fetch_practicals.php");
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="4">
                                 <input type="hidden" name="subject" value="PHP">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">PHP</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">PHP</button></a>
                             </form>
                         </li>
                         <li>
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="4">
-                                <input type="hidden" name="subject" value="C++">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">C++</button></a>
+                                <input type="hidden" name="subject" value="CPP">
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">CPP</button></a>
                             </form>
                         </li>
                     </ul>
@@ -143,14 +150,14 @@ include("php/fetch_practicals.php");
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="5">
                                 <input type="hidden" name="subject" value="Java">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Java</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Java</button></a>
                             </form>
                         </li>
                         <li>
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="5">
                                 <input type="hidden" name="subject" value=".NET">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">.NET</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">.NET</button></a>
                             </form>
                         </li>
                     </ul>
@@ -166,13 +173,13 @@ include("php/fetch_practicals.php");
                             <form action="#" method="POST">
                                 <input type="hidden" name="semester" value="6">
                                 <input type="hidden" name="subject" value="Python">
-                                <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Python</button></a>
+                                <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Python</button></a>
                             </form>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <a href="" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                         <svg class="h-7 w-7" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
@@ -228,14 +235,17 @@ include("php/fetch_practicals.php");
         <div class="grid grid-cols-1 lg:grid-cols-3">
             <!-- <img class="justify-center h-96 md:w-full md:items-center md:justify-center md:mt-40" src="../assets/code_review.svg" alt=""> -->
             <?php
-            $result = display_grid();
-            echo $result;
 
             if (isset($_POST['semester']) && isset($_POST['subject'])) {
                 $semester = $_POST['semester'];
                 $subject = $_POST['subject'];
-                // $result = get_practicals($semester, $subject);
+                // $result = display_practicals_by_sem($semester, $subject);
+
+                // Filter results by semester and subject
+
                 $result = display_practicals_by_sem($semester, $subject);
+            } else {
+                $result = display_grid();
                 echo $result;
             }
             ?>
