@@ -222,7 +222,7 @@ include("php/user_access_control.php");
     </aside>
 
     <div class="p-4 sm:ml-64">
-        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 text-center">
+        <div class="p-4 border-2 border-blue-700 border-dashed bg-blue-800 text-white dark:bg-transparent rounded-lg dark:border-gray-700 text-center">
             <h3 class="font-bold mx-20">Welcome to our coding community!</h3>
             <h6>Share
                 and access
