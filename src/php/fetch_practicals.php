@@ -22,6 +22,7 @@ function display_practicals_by_sem($semester, $subject)
             $subject = $row['subject'];
             $read_more_url = sprintf("php/practical.php?sem=%d&sub=%s&pnum=%d", $semester, $subject, $pnum);
             $delete_practical_url = sprintf("php/delete_practical.php?id=%d", $id);
+            $edit_practical_url = sprintf("../src/edit?id=%d", $id);
             $is_admin = (bool) isset($is_admin) ? $is_admin : false;
 ?>
             <div class="max-h-96 gap-4 p-5">
@@ -37,9 +38,11 @@ function display_practicals_by_sem($semester, $subject)
                             <a href="<?php echo $read_more_url; ?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Read More</a>
                             <?php if ($is_admin) : ?>
                                 <div class="flex space-x-4">
-                                    <svg class="h-7 w-7 text-indigo-400" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
+                                    <a href="<?php echo $edit_practical_url; ?>">
+                                        <svg class="h-7 w-7 text-indigo-400" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </a>
                                     <!-- <a href="<?php echo $delete_practical_url; ?>">
                                         <svg class="h-7 w-7 text-red-600" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -106,6 +109,7 @@ function display_grid()
             $subject = $row['subject'];
             $read_more_url = sprintf("php/practical.php?sem=%d&sub=%s&pnum=%d", $semester, $subject, $pnum);
             $delete_practical_url = sprintf("php/delete_practical.php?id=%d", $id);
+            $edit_practical_url = sprintf("../src/edit?id=%d", $id);
             $is_admin = (bool) isset($is_admin) ? $is_admin : false;
 
         ?>
@@ -122,9 +126,11 @@ function display_grid()
                             <a href="<?php echo $read_more_url; ?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Read More</a>
                             <?php if ($is_admin) : ?>
                                 <div class="flex space-x-4">
-                                    <svg class="h-7 w-7 text-indigo-400" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
+                                    <a href="<?php echo $edit_practical_url; ?>">
+                                        <svg class="h-7 w-7 text-indigo-400" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </a>
                                     <!-- <a href="<?php echo $delete_practical_url; ?>">
                                         <svg class="h-7 w-7 text-red-600" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
