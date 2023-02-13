@@ -1,8 +1,4 @@
 <?php
-//include auth_session.php file on all user panel pages
-
-use function PHPSTORM_META\map;
-
 include("php/auth_session.php");
 include("php/fetch_practicals.php");
 include("php/user_access_control.php");
@@ -46,146 +42,51 @@ include("php/user_access_control.php");
 
                         </div>
                     </li>
-                    <li>
-                        <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem1-dropdown" data-collapse-toggle="sem1-dropdown">
-                            <span class="material-symbols-outlined h-7 w-7">
-                                counter_1
-                            </span> <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Semester - 1</span>
-                            <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
+                    <!-- using loops for navigation -->
+                    <?php
+                    // use a map
+                    $semesters = array(
+                        1 => array("C", "DBMS"),
+                        2 => array("Advanced C", "I & WD"),
+                        3 => array("ADBMS", "DS"),
+                        4 => array("PHP", "CPP"),
+                        5 => array("JAVA", ".NET"),
+                        6 => array("Python")
+                    );
 
-                        </button>
-                        <ul id="sem1-dropdown" class="hidden py-2 space-y-2">
+                    foreach ($semesters as $semester => $subjects) {
+                        echo '
                             <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="1">
-                                    <input type="hidden" name="subject" value="C">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">C</button></a>
-                                </form>
+                                <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem' . $semester . '-dropdown" data-collapse-toggle="sem' . $semester . '-dropdown">
+                                    <span class="material-symbols-outlined h-7 w-7">
+                                        counter_' . $semester . '
+                                    </span> <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Semester - ' . $semester . '</span>
+                                    <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <ul id="sem' . $semester . '-dropdown" class="hidden py-2 space-y-2">
+                        ';
+
+                        foreach ($subjects as $subject) {
+                            echo '
+                                <li>
+                                    <form method="POST">
+                                        <input type="hidden" name="semester" value="' . $semester . '">
+                                        <input type="hidden" name="subject" value="' . $subject . '">
+                                        <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">' . $subject . '</button></a>
+                                    </form>
+                                </li>
+                            ';
+                        }
+
+                        echo '
+                                </ul>
                             </li>
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="1">
-                                    <input type="hidden" name="subject" value="DBMS">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">DBMS</button></a>
-                                </form>
-                            </li>
-                        </ul>
-                        <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem2-dropdown" data-collapse-toggle="sem2-dropdown">
-                            <span class="material-symbols-outlined h-7 w-7">
-                                counter_2
-                            </span> <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Semester - 2</span>
-                            <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        <ul id="sem2-dropdown" class="hidden py-2 space-y-2">
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="2">
-                                    <input type="hidden" name="subject" value="Advanced C">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Advanced C</button></a>
-                                </form>
-                            </li>
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="2">
-                                    <input type="hidden" name="subject" value="I & WD">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">I & WD</button></a>
-                                </form>
-                            </li>
-                        </ul>
-                        <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem3-dropdown" data-collapse-toggle="sem3-dropdown">
-                            <span class="material-symbols-outlined h-7 w-7">
-                                counter_3
-                            </span> <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Semester - 3</span>
-                            <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        <ul id="sem3-dropdown" class="hidden py-2 space-y-2">
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="3">
-                                    <input type="hidden" name="subject" value="ADBMS">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">ADBMS</button></a>
-                                </form>
-                            </li>
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="3">
-                                    <input type="hidden" name="subject" value="DS">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">DS</button></a>
-                                </form>
-                            </li>
-                        </ul>
-                        <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem4-dropdown" data-collapse-toggle="sem4-dropdown">
-                            <span class="material-symbols-outlined h-7 w-7">
-                                counter_4
-                            </span> <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Semester - 4</span>
-                            <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        <ul id="sem4-dropdown" class="hidden py-2 space-y-2">
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="4">
-                                    <input type="hidden" name="subject" value="PHP">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">PHP</button></a>
-                                </form>
-                            </li>
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="4">
-                                    <input type="hidden" name="subject" value="CPP">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">CPP</button></a>
-                                </form>
-                            </li>
-                        </ul>
-                        <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem5-dropdown" data-collapse-toggle="sem5-dropdown">
-                            <span class="material-symbols-outlined h-7 w-7">
-                                counter_5
-                            </span> <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Semester - 5</span>
-                            <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        <ul id="sem5-dropdown" class="hidden py-2 space-y-2">
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="5">
-                                    <input type="hidden" name="subject" value="Java">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Java</button></a>
-                                </form>
-                            </li>
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="5">
-                                    <input type="hidden" name="subject" value=".NET">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">.NET</button></a>
-                                </form>
-                            </li>
-                        </ul>
-                        <button type="button" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="sem6-dropdown" data-collapse-toggle="sem6-dropdown">
-                            <span class="material-symbols-outlined h-7 w-7">
-                                counter_6
-                            </span> <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Semester - 6</span>
-                            <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        <ul id="sem6-dropdown" class="hidden py-2 space-y-2">
-                            <li>
-                                <form action="#" method="POST">
-                                    <input type="hidden" name="semester" value="6">
-                                    <input type="hidden" name="subject" value="Python">
-                                    <a href="" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><button type="submit">Python</button></a>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
+                        ';
+                    }
+                    ?>
+
                     <!-- Show create practical if user is admin -->
                     <?php
                     global $is_admin;
