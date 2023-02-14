@@ -27,6 +27,18 @@ function display_grid()
     practical_card($result);
 }
 
+function display_practicals_by_search($query)
+{
+    global $con;
+    $db = mysqli_select_db($con, 'notescentral');
+    if (!$db) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+    $query = "SELECT * FROM `practicals` WHERE `name` LIKE '%$query%'";
+    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+    practical_card($result);
+}
+
 
 function practical_card($result)
 {

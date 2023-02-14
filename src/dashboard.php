@@ -137,11 +137,29 @@ include("php/user_access_control.php");
                 process more
                 efficient and effective. Join the community and take your coding skills to the next level!</h6>
         </div>
+
+        <!-- search bar -->
+        <div class="flex justify-center items-center mt-4">
+            <form method="POST" class="w-full">
+                <div class="flex w-full">
+                    <input type="text" name="query" placeholder="Search by title" class="w-full border-2 border-slate-700 bg-slate-800 text-white rounded-tl-lg rounded-bl-lg text-sm focus:outline-none">
+                    <button type="submit" name="search" class="bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <svg class="h-12 w-12 p-2 text-white" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-3">
-            <!-- <img class="justify-center h-96 md:w-full md:items-center md:justify-center md:mt-40" src="../assets/code_review.svg" alt=""> -->
+            <img class="justify-center h-96 md:w-full md:items-center md:justify-center md:mt-40" src="../assets/code_review.svg" alt="">
             <?php
 
-            if (isset($_POST['semester']) && isset($_POST['subject'])) {
+            if (isset($_POST['search'])) {
+                $query = $_POST['query'];
+                $result = display_practicals_by_search($query);
+            } elseif (isset($_POST['semester']) && isset($_POST['subject'])) {
                 $semester = $_POST['semester'];
                 $subject = $_POST['subject'];
                 // $result = display_practicals_by_sem($semester, $subject);
@@ -155,10 +173,9 @@ include("php/user_access_control.php");
             }
             ?>
         </div>
-    </div>
 
 
-    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+        <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
 </body>
 
 </html>
