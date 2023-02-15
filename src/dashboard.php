@@ -14,7 +14,7 @@ include("php/user_access_control.php");
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body>
+<body class="bg-match">
 
     <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
         <span class="sr-only">Open sidebar</span>
@@ -140,9 +140,15 @@ include("php/user_access_control.php");
 
         <!-- search bar -->
         <div class="flex justify-center items-center mt-4">
-            <form method="POST" class="w-full">
+            <form method="GET" class="w-full">
                 <div class="flex w-full">
-                    <input type="text" name="query" placeholder="Search by title" class="w-full border-2 border-slate-700 bg-slate-800 text-white rounded-tl-lg rounded-bl-lg text-sm focus:outline-none">
+                    <input type="text" name="query" value="
+                    <?php if (isset($_GET['query'])) {
+                        $_GET['query'];
+                    } else {
+                        $query = '';
+                    } ?>
+                    " placeholder="Search by title" class="w-full border-2 border-slate-700 bg-slate-800 text-white rounded-tl-lg rounded-bl-lg text-sm focus:outline-none">
                     <button type="submit" name="search" class="bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         <svg class="h-12 w-12 p-2 text-white" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -153,11 +159,10 @@ include("php/user_access_control.php");
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3">
-            <img class="justify-center h-96 md:w-full md:items-center md:justify-center md:mt-40" src="../assets/code_review.svg" alt="">
             <?php
 
-            if (isset($_POST['search'])) {
-                $query = $_POST['query'];
+            if (isset($_GET['search'])) {
+                $query = $_GET['query'];
                 $result = display_practicals_by_search($query);
             } elseif (isset($_POST['semester']) && isset($_POST['subject'])) {
                 $semester = $_POST['semester'];

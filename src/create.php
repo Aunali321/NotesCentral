@@ -48,7 +48,7 @@ if (isset($_POST['create'])) {
     <title>Create Practical</title>
 </head>
 
-<body>
+<body class="bg-match">
     <div class="flex items-center mx-4 my-40 px-4 md:mx-20 md:my-28 justify-center h-screen lg:h-full">
         <div class="w-full md:m-10 bg-white border border-gray-200 rounded-lg shadow md:max-w-3xl dark:bg-gray-800 dark:border-gray-700">
             <h1 class="text-center font-bold text-2xl mt-4">Create a Practical</h1>

@@ -14,7 +14,7 @@ if (session_destroy()) {
     <link rel="stylesheet" href="output.css">
 </head>
 
-<body>
+<body class="bg-match">
     <div class="container">
         <div class="row">
             <div class="col-12">

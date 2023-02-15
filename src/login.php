@@ -46,7 +46,7 @@ if (isset($_POST['username'])) {
     <link rel="stylesheet" href="output.css">
 </head>
 
-<body>
+<body class="bg-match">
     <div class="navbar bg-[#050d22]">
         <a class="btn btn-ghost normal-case text-2xl mx-auto" href="dashboard">NotesCentral</a>
     </div>
