@@ -159,7 +159,7 @@ if (mysqli_num_rows($result) > 0) {
                 <p class="text-2xl text-gray-400 dark:text-gray-500">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> Practical Code </h5>
                 </p>
-                <pre><code class="mb-5 font-normal overflow-auto whitespace-pre-wrap"><?php echo htmlspecialchars($code); ?></code></pre>
+                <pre><code id="code" class="mb-5 font-normal overflow-auto whitespace-pre-wrap"><?php echo htmlspecialchars($code); ?></code></pre>
             </div>
         </div>
 
@@ -181,6 +181,16 @@ if (mysqli_num_rows($result) > 0) {
         <script>
             hljs.highlightAll();
         </script>
+
+        <!-- add language-cpp to id "card" if subject is "CPP" -->
+        <script>
+            var subject = "<?php echo $subject; ?>";
+            if (subject == "CPP") {
+                document.getElementById("code").classList.add("language-cpp");
+            }
+        </script>
+
+
 </body>
 
 </html>
