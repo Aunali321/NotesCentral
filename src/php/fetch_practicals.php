@@ -56,7 +56,7 @@ function practical_card($result)
             $is_admin = (bool) isset($is_admin) ? $is_admin : false;
 
 ?>
-            <div class="max-h-96 gap-4 p-5">
+            <div class="max-h-96">
                 <div class="w-full flex flex-col justify-between h-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div>
                         <a href="#">

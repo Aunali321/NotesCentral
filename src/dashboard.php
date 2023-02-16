@@ -154,7 +154,7 @@ include("php/user_access_control.php");
             </form>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 py-5">
             <?php
 
             if (isset($_POST['search'])) {
