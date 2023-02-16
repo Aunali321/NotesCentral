@@ -50,7 +50,7 @@ function practical_card($result)
             $name = $row['name'];
             $semester = $row['semester'];
             $subject = $row['subject'];
-            $read_more_url = sprintf("php/practical.php?sem=%d&sub=%s&pnum=%d", $semester, $subject, $pnum);
+            $read_more_url = sprintf("php/practical.php?id=%d", $id);
             $delete_practical_url = sprintf("php/delete_practical.php?id=%d", $id);
             $edit_practical_url = sprintf("../src/edit?id=%d", $id);
             $is_admin = (bool) isset($is_admin) ? $is_admin : false;
